@@ -1,0 +1,35 @@
+<section class="phx-hero">
+
+<h1>Details for <%=@pad%></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Aantal</th>
+      <th> </th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for metric <- @metrics do %>
+    <tr>
+    <%= if metric.name !== nil do %>
+    <td><%= metric.name %></td>
+    <%= else %>
+    <td>Niet ingelogde user</td>
+    <%= end %>
+      
+      <td><%= metric.email %></td>
+      <td><%= metric.aantal %></td>
+      
+
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+</section>

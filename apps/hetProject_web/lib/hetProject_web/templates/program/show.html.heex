@@ -1,0 +1,69 @@
+<section class="phx-hero">
+<h1>Show Program</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @program.name %>
+  </li>
+
+  <li>
+    <strong>Author:</strong>
+    <%= @program.author %>
+  </li>
+
+  <li>
+    <strong>Duration:</strong>
+    <%= @program.duration %>
+  </li>
+
+  <li>
+    <strong>Difficulty:</strong>
+    <%= @program.difficulty %>
+  </li>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @program.type %>
+  </li>
+
+</ul>
+<h1>Exercises of the program </h1>
+<%= for exercise <- @program.exercises do %>
+<ul>
+<li>
+    <strong>Name:</strong>
+    <%= exercise.name %>
+  </li>
+  <li>
+    <strong>difficulty:</strong>
+    <%= exercise.difficulty %>
+  </li>
+  <li>
+    <strong>explanation:</strong>
+    <%= exercise.explanation %>
+  </li>
+ 
+  <li>
+    <strong>Primary muscles:</strong>
+    <%= exercise.muscles %>
+  </li>
+ 
+  <hr>
+</ul>
+<% end %>
+<h1>Show all users that are doing this program</h1>
+<%= for user <- @program.users do %>
+<ul>
+  <li>
+    <%= user.name %>
+  </li>
+</ul>
+<% end %>
+
+<span><%= link "Edit", to: Routes.program_path(@conn, :edit, @program) %></span> |
+<span><%= link "Add exercises", to: Routes.program_path(@conn, :addExercises,@program) %></span> |
+<span><%= link "Back", to: Routes.program_path(@conn, :index) %></span>
+
+</section>

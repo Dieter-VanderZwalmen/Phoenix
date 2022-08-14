@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= csrf_meta_tag() %>
+    <%= live_title_tag assigns[:page_title] || "HetProject", suffix: " · Phoenix Framework" %>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+  </head>
+  <body>
+  
+  <img id="backgroundimg" src={Routes.static_path(@conn, "/images/background.png")} alt="background"/>
+
+    <header>
+      <section class="container">
+        <ul id="talen">
+          <p> Kies jouw taal</p>
+           <li><%= new_locale @conn, :en, "English" %></li>
+           <li><%= new_locale @conn, :nl, "Nederlands" %></li>
+        </ul>
+        <a href="/" class="phx-logo">
+          <img src={Routes.static_path(@conn, "/images/logo.png")} alt="Program swap Logo"/>
+        </a>
+     
+      
+      <nav class="header">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href={Routes.user_path(@conn, :index) }>Users</a></li>
+          <li><a href={Routes.program_path(@conn, :index) }>Programs</a></li>
+          <li><a href={Routes.exercise_path(@conn, :index) }>Exercises</a></li>
+
+          <li><a href={Routes.session_path(@conn, :new) }>Login</a></li>
+          <li><a href={Routes.session_path(@conn, :logout) }>Logout</a></li>
+
+           <!-- only show when user has the role admin or business_analyst -->
+                      
+              <li><a href={Routes.metric_path(@conn, :index) }>Metrics</a></li>
+       
+          
+          <li><a href="/user_scope">User scope</a></li>
+          <li><a href="/manager_scope">Manager scope</a></li>
+          <li><a href="/admin">Admin scope</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    </header>
+    <%= @inner_content %>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<section class="phx-hero">
+
+<h1>Show Exercise</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @exercise.name %>
+  </li>
+
+  <li>
+    <strong>Muscles:</strong>
+    <%= @exercise.muscles %>
+  </li>
+
+  <li>
+    <strong>Difficulty:</strong>
+    <%= @exercise.difficulty %>
+  </li>
+
+  <li>
+    <strong>Explanation:</strong>
+    <%= @exercise.explanation %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.exercise_path(@conn, :edit, @exercise) %></span> |
+<span><%= link "Back", to: Routes.exercise_path(@conn, :index) %></span>
+</section>

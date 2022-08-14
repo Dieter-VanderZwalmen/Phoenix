@@ -1,0 +1,30 @@
+<section class="phx-hero">
+
+<h1>Listing Metrics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pad</th>
+      <th>Type</th>
+      <th>Aantal</th>
+      <th>Details </th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for metric <- @metrics do %>
+    <tr>
+      <td><%= metric.pad %></td>
+      <td><%= metric.type %></td>
+      <td><%= metric.aantal %></td>
+      <td><%= link "Details" , to: Routes.metric_path(@conn, :details,metric.pad,metric.type) %></td>
+
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+</section>

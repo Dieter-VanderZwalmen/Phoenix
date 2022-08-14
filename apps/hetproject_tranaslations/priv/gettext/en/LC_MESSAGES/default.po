@@ -1,0 +1,10 @@
+#, elixir-autogen, elixir-format
+#: lib/hetProject_web/templates/page/index.html.heex:2
+#: lib/hetProject_web/templates/page/index.html.heex:20
+msgid "Welcome to %{name}!"
+msgstr ""
+
+#, elixir-autogen, elixir-format, fuzzy
+#: lib/hetProject_web/templates/page/index.html.heex:7
+msgid "Welcome to the world of %{language} and %{framework}!"
+msgstr "Welcome to the world of elixir and phoenix!"

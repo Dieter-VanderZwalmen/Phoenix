@@ -1,0 +1,30 @@
+<section class="phx-hero">
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Muscles</th>
+      <th>Difficulty</th>
+      <th>Explanation</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for exercise <- @exercises do %>
+    <tr>
+      <td><%= exercise.name %></td>
+      <td><%= exercise.muscles %></td>
+      <td><%= exercise.difficulty %></td>
+      <td><%= exercise.explanation %></td>
+
+      <td>
+        <span><%= link "add to program", to: Routes.program_path(@conn, :addToProgram,@program,exercise) %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+</section>

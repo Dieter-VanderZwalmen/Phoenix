@@ -1,0 +1,81 @@
+<section class="phx-hero">
+<h1>Show User</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </li>
+   <li>
+    <strong>Role:</strong>
+    <%= @user.role %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </li>
+
+  <li>
+    <strong>Gender:</strong>
+    <%= @user.gender %>
+  </li>
+  
+  <%= if @user.api_key == nil do %>
+  <%= else %>
+  <li>
+    <strong>api key:</strong>
+    <%= @user.api_key.api_key %>
+  </li>
+  <%end%>
+  
+  <!--<li>
+    <strong>Hashed password:</strong>
+    <%= @user.hashed_password %>
+  </li>-->
+
+</ul>
+
+<h1>Show user programs</h1>
+<%= for program <- @user.program do %>
+<ul>
+  <li>
+    <strong>Name:</strong>
+    <%= program.name %>
+  </li>
+  <li>
+    <strong>Author:</strong>
+    <%= program.author %>
+  </li>
+ 
+  <li>
+    <strong>Duration:</strong>
+    <%= program.duration %>
+  </li>
+  <li>
+    <strong>Difficulty:</strong>
+    <%= program.difficulty %>
+  </li>
+  <li>
+    <strong>type:</strong>
+    <%= program.type %>
+  </li>
+ 
+  
+
+</ul>
+<% end %>
+
+<%= if @user.api_key !== nil do %>
+  <%= link "Delete api key" , to: Routes.user_path(@conn, :delete_api_key,@user) %>
+<% else %>
+<span>                                
+<%= link "Genereer api key" , to: Routes.user_path(@conn, :generate_api_key,@user) %>
+</span>  
+<%end%>
+
+
+| <span><%= link "Edit", to: Routes.user_path(@conn, :edit, @user) %></span> |
+<span><%= link "Back", to: Routes.user_path(@conn, :index) %></span>
+</section>

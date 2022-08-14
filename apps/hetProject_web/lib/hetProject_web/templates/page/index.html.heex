@@ -1,0 +1,99 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Program Swap" %></h1>
+  <p>The place to swap programs with others!</p>
+
+  <!--
+  <h2>Vertaald deeltje testing </h2>
+  <p>
+    <%= gettext "Welcome to the world of %{language} and %{framework}!", language: "Elixir", framework: "Phoenix!" %>
+  </p>
+  -->
+  
+  <h2>Over ons </h2>
+  <p>Op deze site kan je verschillende programmas vinden gemaakt door andere gebruikers!<br>
+  Na het registreren kan je je inschrijven voor verschillende programmas <br>
+  Je kan ook zelf een programma aanmaken. Voor deze programmas kan je dus ook oefeningen aan toevoegen.
+  </p>
+  </section>
+<section class="phx-hero">
+  <h2> Wat kan een gebruiker allemaal? </h2>
+  <ul>
+  <ul>
+  <li> het bekijken van alle users maar enkel show delete en edit op jezelf</li>
+  </ul>
+    <ul>
+      <li>Het bekijken van alle programmas</li>
+      <li>Inschrijven voor een programma</li>
+      <li>Toevoegen van een programma</li>
+    </ul>
+    <ul>
+    <li>Het bekijken van alle oefeningen</li>
+    <li>Toevoegen van een oefening</li>
+    </ul>
+
+  </ul>
+
+  <h2> Wat kan een admin allemaal?</h2>
+  <ul>
+      <li>Alles wat een user ook zouden kunnen</li>
+      <li>Het bekijken van alle users</li>
+     
+  </ul>
+  <h2> Wie kan admin en managers maken</h2>
+  <ul>
+      <li>enkel de personen die </li>
+      <li>Het bekijken van alle users</li>
+     
+  </ul>
+</section>
+
+
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+  <p>A productive web framework that<br />does not compromise speed or maintainability.</p>
+</section>
+
+<section class="phx-hero">
+  this page is for: <%= @role %>
+  
+  <br>
+  user - manager - admin
+</section>
+
+
+<section class="row">
+  <article class="column">
+    <h2>Resources</h2>
+    <ul>
+      <li>
+        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
+      </li>
+      <li>
+        <a href="https://github.com/phoenixframework/phoenix">Source</a>
+      </li>
+      <li>
+        <a href="https://github.com/phoenixframework/phoenix/blob/v1.6/CHANGELOG.md">v1.6 Changelog</a>
+      </li>
+    </ul>
+  </article>
+  <article class="column">
+    <h2>Help</h2>
+    <ul>
+      <li>
+        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
+      </li>
+      <li>
+        <a href="https://web.libera.chat/#elixir">#elixir on Libera Chat (IRC)</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
+      </li>
+      <li>
+        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
+      </li>
+      <li>
+        <a href="https://discord.gg/elixir">Elixir on Discord</a>
+      </li>
+    </ul>
+  </article>
+</section>

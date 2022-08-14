@@ -1,0 +1,37 @@
+<section class="phx-hero">
+<h1>Listing Programs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Duration</th>
+      <th>Difficulty</th>
+      <th>Type</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for program <- @programs do %>
+    <tr>
+      <td><%= program.name %></td>
+      <td><%= program.author %></td>
+      <td><%= program.duration %></td>
+      <td><%= program.difficulty %></td>
+      <td><%= program.type %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.program_path(@conn, :show, program) %></span>
+        <span><%= link "Edit", to: Routes.program_path(@conn, :edit, program) %></span>
+        <span><%= link "Delete", to: Routes.program_path(@conn, :delete, program), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <span><%= link "Add", to: Routes.program_path(@conn, :addToUser, program) %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Program", to: Routes.program_path(@conn, :new) %></span>
+</section>

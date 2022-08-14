@@ -1,0 +1,26 @@
+<!--<section class="container">
+
+<section class="phx-hero-header">
+<nav role="navigation">
+        <ul>
+         <li><a href="/">Home</a></li>
+          <li><a href={Routes.user_path(@conn, :index) }>Users</a></li>
+          <li><a href={Routes.program_path(@conn, :index) }>Programs</a></li>
+          <li><a href={Routes.exercise_path(@conn, :index) }>Exercises</a></li>
+
+          <li><a href={Routes.session_path(@conn, :new) }>Login</a></li>
+          <li><a href={Routes.session_path(@conn, :logout) }>Logout</a></li>
+          
+          <li><a href="/user_scope">User scope</a></li>
+          <li><a href="/manager_scope">Manager scope</a></li>
+          <li><a href="/admin">Admin scope</a></li>
+        </ul>
+</nav>
+</section>
+</section>-->
+<main class="container">
+  <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+  <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+  <%= @inner_content %>
+</main>
+

@@ -1,0 +1,22 @@
+<section class="phx-hero">
+    <h1>Show User metrics</h1>
+    
+    <ul>
+    
+      <li>
+        <strong>Name:</strong>
+        <%= @user.name %>
+      </li>
+
+      <%= if @user.metric !== nil do %>
+      <li>
+        <strong>pad:</strong>
+        <%= @user.metric.pad %>
+      </li>
+      <li>
+        <strong>aantal:</strong>
+        <%= @user.metric.aantal %>
+      </li>
+      <%end%>
+    </ul>
+ </section>

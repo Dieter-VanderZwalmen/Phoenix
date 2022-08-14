@@ -1,0 +1,38 @@
+<section class="phx-hero">
+
+
+<.form let={f} for={@changeset} action={@action}>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :name %>
+  <%= text_input f, :name,placeholder: "Name" %>
+  <%= error_tag f, :name %>
+
+  <%= label f, :email %>
+  <%= email_input f, :email,placeholder: "Email@mail.com",pattern: ".+?(?=@)@.+..+"%>
+  <%= error_tag f, :email %>
+
+  <%= label f, :gender %>
+  <%= select f, :gender, @acceptable_genders %>
+  <%= error_tag f, :gender %>
+<%= if @ingelogdeUser !== nil do %>
+<%= if @ingelogdeUser.role == "Admin" do %>
+  <%= label f, :role %>
+  <%= select f, :role, @acceptable_roles %>
+  <%= error_tag f, :role %>
+  <%end %>
+  <%end %>
+  <%= label f, :password %>
+  <%= text_input f, :password,type: "password",placeholder: "Password", pattern: "...+" %>
+  <%= error_tag f, :password %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+</.form>
+
+</section>
